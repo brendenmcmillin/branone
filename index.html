@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <html lang="en">
@@ -7,73 +8,200 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bran One</title>
     <style>
-        body{
+        :root {
+            --brand-blue: #01c0f3;
+            --brand-blue-dark: #014d66;
+            --light-grey: rgba(240, 240, 240, 1);
+            --spacing-sm: .5rem;
+            --spacing-md: 1rem;
+            --radius-pill: 1.875rem;
+            --card-gap: 1rem;
+        }
+
+        /* BASE */
+        body {
             font-size: 1.25rem;
             background-color: white;
             color: black;
-            margin: 0rem auto;
+            margin: 0 auto;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 1.15rem;
+            line-height: 1.5rem;
         }
-        h2{
+
+        h2 {
             font-size: 1.75rem;
         }
-        h3{
-            font-size: 1.5;
+
+        h3 {
+            font-size: 1.5rem;
         }
-        a{
-            color: #01c0f3;
+
+        a {
+            color: var(--brand-blue);
             text-decoration: none;
         }
-        a:hover{
+
+        a:hover {
             text-decoration: underline;
         }
-        .content-wrapper{
+
+        p{
+            color: rgba(75,75,75,1);
+        }
+
+        .content-wrapper {
+            box-sizing: border-box;
             max-width: 900px;
             margin: 5rem auto;
-            padding: 0rem 1rem;
+            padding: 0 var(--spacing-md);
         }
-        /*HEADER*/
-        header{
-            margin: 3rem;
+
+        /* HEADER */
+        header {
+            margin: 3rem 0rem 5rem 0rem;
         }
-        header svg{
+
+        header svg {
             width: 8rem;
             height: 8rem;
-            margin: 0rem auto;
-            padding: 1rem;
+            margin: 0 auto;
+            padding: var(--spacing-md);
             border-radius: 100%;
-            background: #01c0f3;
+            background: var(--brand-blue);
             fill: white;
             display: block;
         }
-        .name{
+
+        .name {
             margin-bottom: .5rem;
             font-size: 2.5rem;
             text-align: center;
         }
-        .tagline{
+
+        .tagline {
             color: gray;
-            margin: .5rem auto auto auto;
-            font-size: 1rema;
+            margin: .5rem auto 0 auto;
+            font-size: 1.25rem;
             font-style: italic;
             text-align: center;
         }
-        /*MAIN*/
-        .description{
+
+        /* MAIN */
+        section{
+            margin: 3rem 0rem;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--card-gap);
+        }
+
+        .card-container .card{
+            box-sizing: border-box;
+            box-shadow: rgba(0, 0, 0, 0.1) 0rem .25rem .5rem;
+            border: 1px solid var(--light-grey);
+            border-radius: .1rem;
+            padding: 1rem;
+        }
+
+        .card-container p,
+        .card-container a {
+            font-size: 1rem;
+        }
+
+        .card-container ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .card-container ul li {
+            margin: .25rem 0;
+        }
+
+        .card-container ul li a {
+            display: inline-block;
+            background: var(--brand-blue);
+            color: white;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-pill);
+            margin: .2rem 0;
+        }
+
+        .card-container ul li a:active,  .card-container ul li a:focus, .card-container ul li a:hover{
+            background: var(--brand-blue-dark);
+            text-decoration: none;
+            outline: 0rem;
+        }
+
+        .card-container .cover-image {
+            width: 100%;
+            height: auto;
+        }
+
+        /* TABLET: 2 COLUMNS */
+        @media (max-width: 992px) {
+            .card-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* PHONE: 1 COLUMN */
+        @media (max-width: 600px) {
+            .card-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        /* DESCRIPTION */
+        .description {
             color: rgba(100, 100, 100, 1);
             font-size: 1.25rem;
             font-style: italic;
         }
-        /*FOOTER*/
-        footer{
-            margin-top: 9rem;
+
+
+        /* AUTHOR */
+        .author-content{
+            color: rgba(75,75,75,1);
         }
-        .copyright{
+
+        .author-content::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .author-content img{
+            max-width: 100%;
+            float: none;
+            margin-left: 0rem;
+        }
+
+        /* PHONE: 1 COLUMN */
+        @media (min-width: 600px) {
+            .author-content img{
+                float: right;
+                margin-left: 1rem;
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 5rem;
+        }
+
+        .social-link-container{
+            text-align: center;
+        }
+
+        .copyright {
             color: rgba(200, 200, 200, 1);
             font-size: .75rem;
             text-align: center;
         }
+
     </style>
 </head>
 <body>
@@ -105,34 +233,71 @@
             <p class="tagline">Comics, Puzzles, and Games.</p>
         </header>
         <main>
-            <h2>Puzzles</h2>
-            <h3>Itachi</h3>
-            <p class="description">Math mazes whose objective is to move from the start arrow through the puzzle to the exit arrow.</p>
-            <ul>
-                <li class="card"><a href="https://www.amazon.com/Itachi-1-Mazes-Bran-McMillin/dp/B0B6XGV2BS/">Itachi - Volume 1</a></li>
-                <li class="card"><a href="https://www.amazon.com/Itachi-2-Mazes-Bran-McMillin/dp/B0B7QHWZCY/">Itachi - Volume 2</a></li>
-                <li class="card"><a href="https://www.amazon.com/Itachi-3-Mazes-Bran-McMillin/dp/B0B8BPKG5B/">Itachi - Volume 3</a></li>
-                <li class="card"><a href="https://www.amazon.com/Itachi-4-Mazes-Bran-McMillin/dp/B0B8XY8LLW/">Itachi - Volume 4</a></li>
-                <li class="card"><a href="https://www.amazon.com/Itachi-5-Mazes-Bran-McMillin/dp/B0B92NVLM9/">Itachi - Volume 5</a></li>
-                <li class="card"><a href="https://www.amazon.com/Itachi-6-Mazes-Bran-McMillin/dp/B0B92RJJHH/">Itachi - Volume 6</a></li>
-            </ul>
-            <h3>Hairetsu</h3>
-            <p class="description">Math puzzle where players have all of the white boxes add up to the black boxes.</p>
-            <ul>
-                <li class="card"><a href="https://www.amazon.com/Hairetsu-1-Puzzles-Bran-McMillin/dp/B0BB5NFN6R">Hairetsu - Volume 1</a></li>
-                <li class="card"><a href="https://www.amazon.com/Hairetsu-2-Puzzles-Bran-McMillin/dp/B0BBD77VJS">Hairetsu - Volume 2</a></li>
-                <li class="card"><a href="https://www.amazon.com/Hairetsu-3-Puzzles-Bran-McMillin/dp/B0BCSHGJN5">Hairetsu - Volume 3</a></li>
-            </ul>
-            <h2>Games</h2>
-            <h3>Cheese Chasers</h3>
-            <p class="description">Help the Mice surround the Cheese and break the Mousetraps so that they can get to the Cheese and be the top Cheese Chasers around!</p>
-            <ul>
-                <li class="card"><a href="https://play.google.com/store/apps/details?id=org.boardnaut.studios.cheesechasers.android&pli=1">Android</a></li>
-            </ul>
+
+            <section id="puzzles">
+                <h2>From The Puzzle Lab</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <img class="cover-image" src="img/itachi-v4-cover.png" alt="Itachi: Math Mazes, Volume 4 cover"/>
+                        <h3>Itachi</h3>
+                        <p class="description">Math mazes whose objective is to move from the start arrow through the puzzle to the exit arrow.</p>
+                        <ul>
+                            <li><a href="https://www.amazon.com/dp/B0B7HH98D9?binding=paperback" target="_blank">Books - Amazon</a></li>
+                            <li><a href="https://branone.itch.io/" target="_blank">eBooks - Itch.io</a></li>
+                            <li><a href="https://branone.gumroad.com/" target="_blank">eBooks - Gumroad</a></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <img class="cover-image" src="img/hairetsu-v1-cover.png" alt="Hairetsu: Sum Sets, Volume 1 cover"/>
+                        <h3>Hairetsu</h3>
+                        <p class="description">Math puzzle where players have all of the white boxes add up to the black boxes.</p>
+                        <ul>
+                            <li><a href="https://www.amazon.com/dp/B0BB7Q9XHB?binding=paperback" target="_blank">Books - Amazon</a></li>
+                            <li><a href="https://branone.itch.io/" target="_blank">eBooks - Itch.io</a></li>
+                            <li><a href="https://branone.gumroad.com/" target="_blank">eBooks - Gumroad</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="games">
+                <h2>From The Game Table</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <img class="cover-image" src="img/cheese-chasers-logo.png" alt="Cheese Chasers card game logo"/>
+                        <h3>Cheese Chasers</h3>
+                        <p class="description">Help the mice surround the cheese and break the mousetraps so that they can get to the cheese and be the top Cheese Chasers around!</p>
+                        <ul>
+                            <li><a href="https://play.google.com/store/apps/details?id=org.boardnaut.studios.cheesechasers.android&pli=1" target="_blank">Android</a></li>
+                            <li><a href="https://boardgamegeek.com/boardgame/40819/cheese-chasers" target="_blank">PDF - BoardGameGeek</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="the-author">
+                <h2>The Author</h2>
+                <div class="author-content">
+                    <img src="img/bran-mcmillin.jpg" alt="Bran McMillin"/>
+                    <div class="text">
+                        <p>Bran McMillin is the creator of <a href="https://puzzdrop.com"><i>Puzzdrop</i></a>, a puzzle magazine featuring original logic puzzles like Itachi and Hairetsu, alongside comics that blend humor and brain-twisting creativity.
+                        <p>Bran's work combines game design, art, and storytelling into playful, inventive experiences. He previously edited <i>Panopticon: Puzzles & Games</i> and <i>Puzzle Pile</i>, and has designed thousands of unique puzzles over the years. His projects explore the space between logic and imagination, where thinking hard can still make you laugh.</p>
+                    </div>
+                </div>
+            </section>
+            
         </main>
         <footer>
-            <p class="copyright">&copy;2024 Bran McMillin. All rights reserved.</p>
+            <div class="social-link-container">
+                <a href="https://bsky.app/profile/bran.one"><svg role="img" aria-label="Bluesky" class="svgicon icon_bluesky" height="21" width="21" viewBox="0 0 16 16" aria-hidden="" version="1.1"><path fill="currentColor" d="M3.468 1.948C5.303 3.325 7.276 6.118 8 7.616c.725-1.498 2.697-4.29 4.532-5.668C13.855.955 16 .186 16 2.632c0 .489-.28 4.105-.444 4.692-.572 2.04-2.653 2.561-4.504 2.246 3.236.551 4.06 2.375 2.281 4.2-3.376 3.464-4.852-.87-5.23-1.98-.07-.204-.103-.3-.103-.218 0-.081-.033.014-.102.218-.379 1.11-1.855 5.444-5.231 1.98-1.778-1.825-.955-3.65 2.28-4.2-1.85.315-3.932-.205-4.503-2.246C.28 6.737 0 3.12 0 2.632 0 .186 2.145.955 3.468 1.948Z"></path></svg></a>
+            </div>
+            <div class="copyright-container">
+                <p class="copyright">&copy;2007 - <span id="current-year"></span> Bran McMillin. All rights reserved.</p>
+            </div>
         </footer>
     </div>
+    <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
