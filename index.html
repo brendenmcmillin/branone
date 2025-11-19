@@ -11,7 +11,7 @@
         :root {
             --brand-blue: #01c0f3;
             --brand-blue-dark: #014d66;
-            --light-grey: rgba(240, 240, 240, 1);
+            --light-grey: rgba(245, 245, 245, 1);
             --spacing-sm: .5rem;
             --spacing-md: 1rem;
             --radius-pill: 1.875rem;
@@ -21,7 +21,7 @@
         /* BASE */
         body {
             font-size: 1.25rem;
-            background-color: white;
+            background-color: rgba(240, 240, 240, 1);
             color: black;
             margin: 0 auto;
             font-family: Arial, Helvetica, sans-serif;
@@ -98,6 +98,7 @@
         }
 
         .card-container .card{
+            background-color: white;
             box-sizing: border-box;
             box-shadow: rgba(0, 0, 0, 0.1) 0rem .25rem .5rem;
             border: 1px solid var(--light-grey);
@@ -238,7 +239,7 @@
                 <h2>From The Puzzle Lab</h2>
                 <div class="card-container">
                     <div class="card">
-                        <img class="cover-image" src="itachi-v4-cover.png" alt="Itachi: Math Mazes, Volume 4 cover"/>
+                        <img class="cover-image" src="img/itachi-v4-cover.png" alt="Itachi: Math Mazes, Volume 4 cover"/>
                         <h3>Itachi</h3>
                         <p class="description">Math mazes whose objective is to move from the start arrow through the puzzle to the exit arrow.</p>
                         <ul>
@@ -248,9 +249,9 @@
                         </ul>
                     </div>
                     <div class="card">
-                        <img class="cover-image" src="hairetsu-v1-cover.png" alt="Hairetsu: Sum Sets, Volume 1 cover"/>
+                        <img class="cover-image" src="img/hairetsu-v1-cover.png" alt="Hairetsu: Sum Sets, Volume 1 cover"/>
                         <h3>Hairetsu</h3>
-                        <p class="description">A puzzle of sum sets: combine the white boxes into perfect totals that match the black boxes.</p>
+                        <p class="description">A puzzle of sum sets, whose objective is combine the white boxes into perfect totals that match the black boxes.</p>
                         <ul>
                             <li><a href="https://www.amazon.com/dp/B0BB7Q9XHB?binding=paperback" target="_blank">Books - Amazon</a></li>
                             <li><a href="https://branone.itch.io/" target="_blank">eBooks - Itch.io</a></li>
@@ -264,7 +265,7 @@
                 <h2>From The Game Table</h2>
                 <div class="card-container">
                     <div class="card">
-                        <img class="cover-image" src="cheese-chasers-logo.png" alt="Cheese Chasers card game logo"/>
+                        <img class="cover-image" src="img/cheese-chasers-logo.png" alt="Cheese Chasers card game logo"/>
                         <h3>Cheese Chasers</h3>
                         <p class="description">Help the mice surround the cheese and break the mousetraps so that they can get to the cheese and be the top Cheese Chasers around!</p>
                         <ul>
@@ -278,7 +279,7 @@
             <section id="the-author">
                 <h2>The Author</h2>
                 <div class="author-content">
-                    <img src="bran-mcmillin.jpg" alt="Bran McMillin"/>
+                    <img src="img/bran-mcmillin.jpg" alt="Bran McMillin"/>
                     <div class="text">
                         <p>Bran McMillin is the creator of <a href="https://puzzdrop.com"><i>Puzzdrop</i></a>, a puzzle magazine featuring original logic puzzles like Itachi and Hairetsu, alongside comics that blend humor and brain-twisting creativity.
                         <p>Bran's work combines game design, art, and storytelling into playful, inventive experiences. He previously edited <i>Panopticon: Puzzles & Games</i> and <i>Puzzle Pile</i>, and has designed thousands of unique puzzles over the years. His projects explore the space between logic and imagination, where thinking hard can still make you laugh.</p>
@@ -300,7 +301,4 @@
         document.getElementById("current-year").textContent = new Date().getFullYear();
     </script>
 </body>
-
 </html>
-
-
