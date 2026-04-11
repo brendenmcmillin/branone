@@ -41,7 +41,7 @@ p {
 
 .content-wrapper {
     box-sizing: border-box;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 5rem auto;
     padding: 0 var(--spacing-md);
 }
@@ -91,6 +91,8 @@ section {
 
 .featured-product {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .feature-stack {
@@ -112,7 +114,8 @@ section {
     display: flex;
     flex-wrap: wrap;
     gap: .75rem;
-    margin-top: 1rem;
+    margin-top: auto;
+    padding-top: 1rem;
 }
 
 .button-row a,
@@ -174,7 +177,9 @@ section {
     .card-container {
         grid-template-columns: 1fr;
     }
+}
 
+@media (max-width: 939px) {
     .feature-stack {
         grid-template-columns: 1fr;
     }
