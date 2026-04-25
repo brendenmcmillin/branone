@@ -97,7 +97,7 @@ section {
 
 .feature-stack {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--card-gap);
     align-items: stretch;
 }
