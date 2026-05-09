@@ -95,6 +95,16 @@ section {
     flex-direction: column;
 }
 
+.featured-logo {
+    align-self: stretch;
+    width: 100%;
+    height: clamp(12.125rem, calc(24vw + 50px), 17.125rem);
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto 1.25rem;
+    display: block;
+}
+
 .feature-stack {
     display: grid;
     grid-template-columns: 1fr;
